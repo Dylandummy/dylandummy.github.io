@@ -1,0 +1,787 @@
+<html>
+	<head>
+		<title>Deerwood</title>
+		<link rel=icon href="https://win98icons.alexmeub.com/icons/png/accesibility_window_abc.png" sizes="32x32" type="image/png">
+
+		  <meta charset="UTF-8">
+		  <meta name="description" content="Deerwood is an Immersive Narrative created by Dylan Tuten">
+		  <meta name="keywords" content="Deerwood, Dylandummy, Dylan Tuten, Clickbound, ARG, Janson, The Janson Corporation, Story, Text">
+		  <meta name="author" content="Dylan Tuten">
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="https://unpkg.com/98.css">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-HRNJBN8M0G"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-HRNJBN8M0G');
+		</script>
+		<style>
+			body {
+			  margin: 0;
+			  padding-top: 3%;
+			  padding-left: 8%;
+			  padding-right: 8%;
+			  padding-bottom: 3%;
+			  background: #c0c0c0;
+			  zoom: 150%;
+			  overflow-y:scroll;
+			}
+
+			main {
+			  width: 65rem;
+			  margin-left: 240px;
+			  margin-bottom: 60px;
+			}
+
+			aside {
+			  width: 200px;
+			  position: fixed;
+			  top: 0;
+			  bottom: 0;
+			  padding: 8px;
+			  display: flex;
+			  align-items: stretch;
+			}
+
+			aside .tree-view {
+			  width: 100%;
+			
+			  overflow-y: scroll;
+			}
+
+			h1 {
+			  margin: 12px 0;
+			}
+			
+			li {
+			color: black;
+			}
+			
+			#prelude a {
+			color: purple;
+			text-decoration: none;
+			}
+			#c2 a {
+			color: purple;
+			text-decoration: none;
+			}
+			#c3 a {
+			color: purple;
+			text-decoration: none;
+			}
+			#c4 a {
+			color: purple;
+			text-decoration: none;
+			}
+
+			hr {
+			  margin: 0;
+			  border: none;
+			  width: 400px;
+			  height: 1px;
+			  opacity: 0.5;
+			  background: linear-gradient(
+				to right,
+				red 20%,
+				yellow 20%,
+				yellow 36%,
+				green 36%,
+				green 60%,
+				blue 60%,
+				blue 100%
+			  );
+			}
+
+			h2 {
+			  margin-bottom: 12px;
+			}
+
+			h3 {
+			  font-size: 1.6rem;
+			}
+
+			h3,
+			h4 {
+			  /* Swap the margin for a top-padding so linking to this section
+				 results in a better scroll position */
+			  padding-top: 20px;
+			  margin-top: 0;
+			  display: block;
+			  flex: 0 0 180px;
+			}
+
+			p {
+			  max-width: 50rem;
+			  line-height: 1.5;
+			}
+
+			.component {
+			  display: flex;
+			  margin-top: 24px;
+			}
+
+			blockquote {
+			  margin: 0 0 20px;
+			  padding: 20px;
+			  background: #dfdfdf;
+			}
+
+			blockquote footer {
+			  margin: 12px 0 0 12px;
+			}
+
+			.example {
+			  margin: 16px 0;
+			  padding: 12px 24px;
+			  border-left: 1px solid #808080;
+			}
+
+			details {
+			  margin-top: 12px;
+			}
+
+			summary {
+			  user-select: none;
+			  cursor: pointer;
+			  display: inline;
+			}
+
+			summary::-webkit-details-marker {
+				display: none;
+			}
+
+			details[open] summary {
+			  margin-bottom: 8px;
+			}
+
+			button.focused {
+			  outline: 1px dotted #000000;
+			  outline-offset: -4px;
+			}
+
+			button.active {
+			  box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a,
+				inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+			}
+
+			@media (max-width: 480px) {
+			  aside {
+				display: none;
+			  }
+
+			  main {
+				box-sizing: border-box;
+				width: 100%;
+				margin: 0;
+				padding: 16px;
+			  }
+
+			  hr {
+				width: 100%;
+			  }
+
+			  p {
+				width: 100%;
+			  }
+
+			  h3,
+			  h4 {
+				flex: 0;
+			  }
+
+			  .component {
+				display: block;
+				margin-top: 24px;
+			  }
+
+			  pre {
+				overflow-x: scroll;
+			  }
+			}
+
+		</style>
+	</head>
+	<body>
+	
+		<div class="title-bar">
+	  <div class="title-bar-text">Deerwood - Table of Contents</div>
+	  <div class="title-bar-controls">
+		<button aria-label="Minimize"></button>
+		<button aria-label="Maximize"></button>
+		<button aria-label="Close"></button>
+	  </div>
+	</div>
+		<ul class="tree-view">
+			  <li>
+				<details>
+				  <summary>Part One</summary>
+				  <ul>
+					<li onclick="togglePre();"><a href="#">Chapter One</a></li>
+					<li onclick="toggleTwo();"><a href="#">Chapter Two</a></li>
+					<li onclick="toggleThree();"><a href="#">Chapter Three</a></li>
+					<li onclick="toggleFour();"><a href="#">Chapter Four</a></li>
+				  </ul>
+				</details>
+			  </li>
+			  <li>
+				<details>
+				  <summary>Part Two</summary>
+				  <ul>
+					<li onclick="toggleNews();"><a href="#">The Orlando Sentinel</a></li>
+					<li style="color:gray;">Chapter Five</li>
+					<li onclick="toggleFive();"><a href="#">Chapter Six</a></li>
+					<li onclick="toggleSeven();"><a href="#">Chapter Seven</a></li>
+					<li style="color:gray;">???</li>
+				  </ul>
+				</details>
+			  </li>
+			  <li>
+				<details>
+				  <summary>Part Three</summary>
+				  <ul>
+					<li style="color:gray;">???</li>
+					<li style="color:gray;">Chapter Eight</li>
+					<li style="color:gray;">Chapter Nine</li>
+					<li style="color:gray;">Epilogue</li>
+				  </ul>
+				</details>
+			  </li>
+		  <br>
+			<li>
+				<details>
+				<summary>Important Links</summary>
+					<ul>
+						<li><a href="https://discord.gg/YRmGMazjkT" style="background-color:purple;color:white;" target="_blank">&nbsp;Community Discord&nbsp;</a></li>
+						<li><a href="https://dylantuten.fandom.com/wiki/Clickbound_ARG_Wiki" target="_blank">Dylan Tuten Wiki</a></li>
+						<br>
+						<li><a href="https://twitter.com/dylandummy" target="_blank">Twitter</a></li>
+						<li><a href="https://instagram.com/dylandumbass" target="_blank">Instagram</a></li>
+						<li><a href="https://teespring.com/stores/dylan-tuten" target="_blank">Merchandise</a></li>
+						<br>
+						<li><a href="https://docs.google.com/document/d/e/2PACX-1vT12mwwrClYoblbQLYHzao48j1ImmKuruYn83fXcPvsl8UfaTNDwQogO5Q7fXSEHGww_8zWivQqtJdG/pub" target="_blank">The New King</a></li>
+						<li><a href="https://dylandummy.itch.io/1997" target="_blank">1997</a></li>
+					</ul>
+				</details>
+			</li>
+			<li>
+				<details>
+				<summary>About</summary>
+					<ul>
+						<li>Deerwood is a project created by Dylan Tuten. It is like a novel, but there will be some interactive elements down the road. It is currently ongoing.</li>
+						<li>Dylan Tuten is an extremely attractive boy with stunning facial features. He also has a massive God complex.</li>
+					</ul>
+				</details>
+			</li>
+		</ul>
+		<br><br>
+		<div id="prelude">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - Chapter One</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="togglePre();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="togglePre();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+				<br><b>February 2001,</b> &nbsp;from your secret friend<br>
+<p>The story starts <a href="https://www.reddit.com/user/ModestMouse900" target="_blank">here.</a>
+<br>I was eight years old when my mother died. This is not something I have shared with many people, but my anonymity mixed with the fact that I will probably be dead by the time you read this makes me think that it probably doesn’t matter.
+<br>My father was a drunk. It was very bad at times. But luckily, I had the luxury of an older sister with a car. So she would drive us around while he laid half asleep in his lazy boy (if we were there he’d be yelling at us), sometimes going to eat, sometimes going to her boyfriend’s house, etc, etc.
+<br>On this night, my sister was quite tired. She had been driving around for a while with me, we needed an escape after what had happened that day. It was absolutely terrible. Father had hit sissy because he found some alcohol in her room.
+<br>Sissy was really tired. Her eyes were flickering. As we drove, she occasionally drifted off to that strange land I would come to learn about. It was getting darker and darker, so we decided to pull into a neighborhood and sleep in the car that night. We pulled into the neighborhood, trying to find a place to pull over. But then for some reason, Sissy’s head fell down. We sped up.
+<br>“Sissy? Where did you go?” I asked. I was very innocent at the time. She did not give me a response, so I asked again. “Where did you go?” I asked again. We were getting faster and faster. The road curved, but we did not. We kept going. Into the yard, over the mailbox, the top of the car now the bottom.
+<br>I was crying, it hurt my neck so bad. But it wasn’t me who /really/ got hurt. When we flipped, I heard a crack. I looked to my left. There she was. Sissy looked but did not see.
+<br>Through the loud buzz and steam of the car, I heard a creak from the distance. I heard questioning yells, and the racking and cocking of a shotgun. More yells. I heard “Who’s there?” or something similar. I opened my mouth, but strangely nothing came out. I was staring at my sister. I felt my head getting hotter as the blood rushed to my face. I was nearly choking on the seatbelt. I heard a loud knocking on the door beside me. I knocked back on the door. It opened. “Oh my”, I heard a feminine voice from a distance. “What do we do, Charlie?” asked the woman. “Shut up, C. It don’t need to know our names,” said the man. Before extending one hand to unbuckle my seatbelt, he put the gun down on the dark green grass, and extended another hand to hold me after he unbuckled.
+<br>When he unbuckled I floated for a second, before he used his unbuckle-hand to grab me and lift me out of the car. He carried me over to what appeared at the time to be his wife, who held me close to her chest as I saw the man through the fog and steam of the car stride to the driver’s side. The woman shushed me, seemingly trying to get me to sleep. She probably thought I was much younger than I was. Most people did. I was a small child.
+<br>A moment later, the man came back, struggling to carry my sister on his back. He placed her on the ground. He approached the woman and I. “Dead.” he said. I shed a silent tear.
+<br>I whimpered in a weak voice, asking if it would be a good idea to call the police. “No. We don’t do that up here.” said the woman. She seemed slightly surprised I said something, but her tone was kind nonetheless. I was surely confused as to what that meant, but I didn’t say anything. “Should I call my father?” I asked. I did not get a response.
+<br>The man turned to me and mouthed an apology through his long, grey beard. I didn’t understand why he was apologizing, we broke his mailbox after all.
+<br>You see, the death of my sister was sad to me, but for some reason it did not affect me as much as one would assume it would.
+<br><br>
+I would like to take a moment aside from my story to explain something to you, dear reader, because I find this very important. What you are reading now is meant for you. Yes, you. This is not a work of fiction. This is not a novel or a story written by Dylan Tuten. This is real. I have asked Dylan to host these emails on his website in a delayed email that will be sent almost twenty years from now. I trust he will be able to pass on these emails to you, as per our deal. This, among many, many other things will be discussed at a later date. There are some things you must understand to fully comprehend the story I will be sharing with you. These things will be explained before their core concepts are introduced.
+<br>I will begin with some backstory about the town that I grew up in.
+<br>It was called “Winterwood”, located just outside of the city of Orlando in the state of Florida. Most neighborhoods were gated or otherwise closed communities. There were seldom open neighborhoods, two if I can recall. Mulholland and Deerwood. Mulholland was known to be ridden with crime and junkies, and Deerwood was known to be ridden with… well… weirdos. The neighborhood my sister and I crashed in was Deerwood.
+<br>
+<br>The woman opened the door behind her and carried me into their home. She brought me to the couch, in front of their television. There was an infomercial for a knife set playing. Through the loud audio emitting from the TV, I heard the two people outside having an argument through hushed yells. I heard them mention “The boy” and “The girl”, so I knew it was about what to do with us. They also debated about what to do with the “Car situation”, and mentioned a curfew. I didn’t know what a curfew was. But if I knew then what I know now, I would wonder precisely what they were talking about. There was no national, state-wide, or even city-wide curfew at that time.
+<br>After a few minutes went by, the old couple came in. They both smiled at me. The woman approached me and the husband walked off. “What’s your name, sweetie?” she asked. I heard a phone dialling in the background. I told the woman my name.
+<br>Soon after, the man approached and said in a hushed voice to his wife something similar to “They’re coming. They want the kid.” and then they both looked at me. I was quite confused, I didn’t do anything at all! I asked if I could go home. The woman smiled a small smile, her eyes watering. The man had a rough look on his face, like he was torn on his decision to make the call to whomever that was on the phone.
+<br>After a while, I went to sleep on the couch. The woman brought me a nice soft blanket and pillow to sleep under, and as I drifted off I noticed how nice the house I was in truly was. The owners were certainly well-off, that was for sure. I wondered as I fell asleep what my father would think.
+<br>I woke up to a loud banging at the door. The man and woman were already up and dressed when I got up. The man walked to the door and opened it. I turned my head to see who was there, but there was a blind spot in the doorway. From what I could hear, the visitor was a young man. The woman asked if I was hungry. I said I was. She got up and walked to the kitchen. I noticed through the windows that it was light out. And then the man came back inside. He beckoned towards me to follow him.
+<br>I walked out with the man and saw three other people and a car in the road. Not sissy’s car. This one was dirtier, it was a green jeep. Everyone but me was tall, I felt very small. The tallest one, the young man in the front, was wearing a hawaian shirt with shorts. The two behind him were shorter but beefier, they seemed to be security guards. They wore nice suits, guns at their sides.
+<br>“So this is it, huh?” he asked the old man. I saw the old man nod in his peripheral vision. The young man turned to me. “Hey, buddy. I’m Sean. Boy, do I have a story to tell you.” he said. I heard footsteps behind me. The woman dashed out towards me and handed me a peanut butter and jelly sandwich in a zip-lock bag. She looked up at the young man. “Praise Father.” she said. “Praise Father”, said the young man and the two guards behind him in unison. The old man that I knew to be called Charlie did not say “Praise Father” like the others. This did not go unnoticed by Sean, who looked for a few seconds at the old man before turning back to me. “You’re gonna come with me. We have a lot to tell you.” he said. I looked up at him, slightly annoyed for my lack of understanding of what was going on, and asked if I was going home. The young man said “No.” and gestured to the green jeep behind him. He and his guards got in the jeep, one on each side of Sean. I could not see the driver. The young man gestured for me to sit in the front. I looked up at the two that were as hospitable as to take me in. I asked where my sister went. “Beyond.” said the man.
+<br>“She went beyond.”</p>
+
+
+			</ul>
+			<br><br>
+		</div>
+		<div id="c2">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - Chapter Two</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleTwo();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleTwo();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+				<br><b>March 2001,</b> &nbsp;from your secret friend<br>
+<p>I was screaming but nobody came. The bad men were coming. Father was coming. I had to get to William’s Machine-
+<br>No… Not yet… I was in the car with Sean. We drove and drove through the long and sprawling neighborhood. “Where are you taking me, sir?” I asked Sean, who sat in the backseat. “You’ll know. I promise you’ll find that and more out by the end of the day. Just calm down for a while, little buddy. You’ve got a ways to go,” he said. “Now, before we get to where you’ll be staying, we’re gonna make a quick stop at a good friend of mine’s house. Just stay in the car there.” he said, before I heard the back door of the car open. Through the tinted glass windows, I saw the guard-man get out, then saw Sean get out, and then at last I saw the guard get back in. The house Sean approached was very nice and big. I saw, if I can remember this correctly, a pregnant lady working out in the front yard. Come to think of it, she wasn’t just pregnant, she looked like she was about to burst.
+<br>Sean ignored the lady. He walked right up to the front and, instead of knocking, simply opened the door and walked right in. I jumped when some rather <a href="https://www.youtube.com/watch?v=CTAud5O7Qqk" target="_blank">odd music</a> began playing extremely loudly. I turned around to see that the driver had turned on the radio. He turned to face me. I looked into his eyes. I saw three things. A book, a plane, and a clock. The clock was turning.
+<br>“One of our residents is a very smart man. He has invented a… machine.” said Sean. “Wait… what? Where did you come from?” I asked. “We just call it William’s Machine. What it does is quite complicated. It would be incredibly hard to explain now.” he said. He turned to face out the opposite window as he said this. “I just had to check and make sure everything was all good and operational.”
+<br>I looked up and saw that me and Sean were floating high up in the sky. “I’m taking you to see Father’s Sun.” he said.
+<br>I watched Sean come out of the house. The song was ending now. I wasn’t sure what happened, but before I had time to question it, Sean opened the car door. The guard got out, Sean got in, and the guard got in again. “Let’s go to Father’s house.” he said to the driver.
+<br>The car was moving again, silent but for the noise of the vehicle itself, as the music had stopped. We passed a school, then we took a right, then a left, and then another right, forward for two blocks, then a left, and we arrived at a small little house that looked to be abandoned for many years. Well, that being said, the house was only small compared to the rest of the houses.
+<br>The driver slowed down to a halt, and I heard the back doors of the car open. I opened my door as well. I got out and looked up at Sean. He gestured for me to follow him, and I did. I did not yet know the exact dangers of trusting strangers, so when any adult (or really anybody older than me, for that matter) requested something of me, I usually compiled.
+<br>Sean led me through the already half open front door, and when I entered my nose immediately encountered an incredibly awful smell. I put my dirty shirt over my nose and followed Sean through to what looked to be a kitchen in the back. A television was there. It was playing static. “Yeah, no television signal in here. Not for seven years.” he said. He walked to the fridge and opened it, and to my surprise, it seemed to be completely functional. He pulled out a Spider-Man themed Lunchables package and tossed it my way. I didn’t catch it properly. It fell to the ground. Sean laughed. “Haven’t you ever played baseball before?” he asked.
+<br>I had played baseball with my father before. It was fun, I enjoyed it. I hit the ball with the bat and he catched it.That was a good time. But that day, in the dilapidated house, it seemed as if that time was passed. That time, that happy time, was long gone. It’s funny, it didn’t seem happy when it was happening, but it is so odd to me, even now, how people seem to not truly understand to appreciate someone, or something, until it is gone.
+<br>I picked up the Lunchables package off of the floor. “You should eat.” said Sean. “You’ll be meeting Father soon.” he said.
+<br>I felt in my pocket the ziplock bag containing the peanut butter and jelly sandwich that the nice woman gave me that morning.
+<br>“So what were you doing at that house?” I asked Sean. He straightened himself up (previously he was leaning on one of the countertops.) “One of our residents is a very smart man. He has invented a… machine.” said the young man. “What kind of machine?” I asked. “We just call it William’s Machine. What it does is quite complicated. It would be incredibly hard to explain now.” he said. He turned to face out the opposite window as he said this. “I just had to check and make sure everything was all good and operational.”
+<br><br>
+Of course, Sean was not lying. He had no clue what the Williamsmachine was. He was sent there by his boss, who was told to send Sean there by /his/ boss. Sean was a pawn. Of course, Sean didn’t last very long after this point in our story anyways.
+<br>I feel like I owe you a confession. I messed up. I used the machine wrong. I got here, to your world, to this time, though in many ways I am not in this time, or in this world. I am three years and a month from now. I am many worlds away on Earth. Life is good where I am from.
+<br>Even though I was brought into Deerwood, my time there was quite happy nonetheless. I did not despise the neighborhood, nor did I despise Father. I loved father, like all of his children. Father was a good man, there was no denying. Of course, I had my issues with it, or I wouldn’t have left. But I did. And I would give anything right now to go back. Maybe in three years I will see if Deerwood starts in this world. I hope it does. But one thing is certain. If you are reading this right now, I am still alive. Dylan would not post these if I wasn’t. The only reason he is doing this is because of what I know.
+<br>
+<br>I was very confused to say the least.
+<br>“Who is Father?” I asked Sean. “Everything good.” said Sean with a smile. “So he’s like God?” I asked. “Better.” he said. And then the door behind me creaked open. It was a pretty looking (although quite pale) lady in a beautiful blue dress. “Hello, child.” she said without looking at me. Her eyes were dead set on Sean. “Come with me.” she said. For some reason, I seemed to like this woman. She reminded me of my mother in a strange way.
+<br>I followed her out into the hallway. Sean attempted to join us, but the woman closed the door in front of him, right in his face. “Who are you?” I asked, to no avail. “Where are we? Where are you taking me?” and yet again, the woman said nothing. I was confused, and to be truthful, a little scared.
+<br>It’s very funny to me now how I didn’t think about my sister much at that time, even less than 24 hours after her death. I still, to this day, do not completely understand what really happened. Maybe you will be able to make more sense out of the events than I can. But somehow, I do not miss my sister. Do not get me wrong, I loved her, but I do not miss her.
+<br>The woman took me to the back yard. As we passed the large staircase, she gave me a serious warning. “Never climb those steps, child. It is a slippery slope.” I nodded my head and said “I understand”. But that was a lie. I did not understand. /What could have been up there?/, I remember wondering. It was not good to wonder that, it led me nowhere but closer to where I am now, and that is not a happy place.
+<br>So we were in the backyard and I noticed for the first time in a while that it was a beautiful day. The suns were shining brightly. “Father will see you in just a moment. He has to deal with Sean first.” she said. “He shouldn’t have seen Benjamin today. That was very stupid of him”. I heard footsteps behind me and me and the woman turned to see a man walk out of the back door. It was an adult man, quite tall actually. He had rather dark brown hair and green eyes. He wore a black suit and tie with a purple shirt under. “Is this it?” he asked the woman. “Yes. This is the child.” she responded. He turned to face me. “Greetings child, I am Father. Me and you need to have a little talk.” he said. I smiled at him.
+<br>Father did not smile back.
+</p>
+
+
+			</ul>
+			<br><br>
+		</div>
+		<div id="c3">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - Chapter Three</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleThree();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleThree();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+				<br>First, a message from &nbsp;<b>Dylan Tuten</b>, the /true/ creator of Deerwood.<br>
+<p>Hello, readers. It has come to my attention that there has been a hacker that has snuck in a link to their outrageous attempt at a parody. Reddit user u/ModestMouse900 is /not/ a part of Deerwood! Please ignore any messages from this user. Thank you! Remember, Deerwood is just fiction! This user is not a character, it is simply a hacker loser who really needs to just get a life!
+I will not be removing these links because of personal reasons. Please do not ask any more questions on this matter, or in any way try to visit this profile. Thank you. And remember, Deerwood is a work of fiction!
+<br>
+				<br><b>April 2001,</b> &nbsp;from your secret friend<br>
+<p>I heard footsteps behind me and me and the woman turned to see a man walk out of the back door. It was an adult man, quite tall actually. He had rather dark brown hair and green eyes. He wore a black suit and tie with a purple shirt under. “Is this it?” he asked the woman. “Yes. This is the child.” she responded. He turned to face me. “Greetings child, I am Father. Me and you need to have a little talk.” he said. I smiled at him.
+<br>He did not smile back. He instead turned back into the house and walked in. I was a little confused, and I looked up and saw the woman smiling down at me, looking exceptionally grey and slender. “He wants you to follow him.” she said.
+<br>I followed him into the house. Me and Father went through the small hallway, past the staircase, and took a left into another room, which looked like an old study. Worn and rather dusty books of dull primary colors lined the walls. Father stopped and was facing the shelves when he murmured something under his breath that I could not hear. He turned to face a large chest to our left, and then he approached it. He spoke as he moved to it. “Do you know who I am?” he asked. I opened my mouth but nothing came out. I was confused. He stopped again and turned. “I am Father, and you are our newest child here at Deerwood” he said. “What is Deerwood?” I asked, feeling slightly stupid. Obviously, Deerwood was the name of the neighborhood. But that wasn’t the only thing that could be described by that word. “Deerwood is a family, child.” he said. “Is Sean a child, too?” I asked. “Sean was not a child, no. He was a worker for us. However, he was not loyal to me, so I have disowned him from our family.” I didn’t know what that meant, but I didn’t think I really wanted to either. “What did he do though? Was it about William’s Machine?”
+<br>Father straightened himself out. He seemed slightly surprised that I knew what that was. “He was not supposed to go to the house of Williams today. He was messing with things that he did not understand. He thought he was helping, but Benjamin Williams is best left alone.” he stated. I noticed that as he said the name his eyes didn’t quite meet mine.
+<br><br>
+At times I wonder if it is possible that I am a character myself. I wonder if maybe this is not how this story played out. Maybe there is a not-so invisible hand controlling me to do things to make me entertaining, or to show off for an audience. Maybe I should change my story to make that happen, lest Dylan kill me off.
+<br><br>
+I decided fuck it, who needs a Father anyways. Why not just fucking kill him? So I grabbed a book and threw it at /Father/’s head. He fell to the ground, but that didn’t last long. He got up and wiped the blood off of his head. He pulled out a small knife from his belt and charged at me. He swiped at me. He slashed my face in half and I had a wound that would one day turn into a /scar/, assuming I survived the fight between me and Father. I used my boyish arms to struggle to get Father off of me. I went for the knife he was holding. I grabbed it, cutting through half of my hand in the process. I stabbed Father in the chest, and I watched the blood spurt out of him. It got all over my clothes. I thought about sissy. I realized that I did not care. Death was meaningless, after all, we aren’t real anyways. I stabbed again. Father made me do it. Father made me do it. Father made me do it. Father made me do it.
+<br><br>
+I think I might be going crazy. I must be going crazy. Why am I talking like this? I’m fucking insane. What is happening? Am I really me? Or am I Dylan? I was reading the computer program now.
+<br>I was talking to Lola, Dylan’s little computer friend. She was telling me all about the machine. She told me that Ben made it. She told me that Dylan had left to exist in another time, but in doing so he changed somehow. He morphed to be about as young as Ben’s son. She made it seem like it was a funny way that the universe got back to him. That’s good. Let that little bastard rot. Fuck him. Fuck him for what he did to Benjamin. Fuck him for what he did to Charlie. /Fuck him for what he did to me./
+<br>I wanted to go to the year the event that caused him to come here to be set in motion. I wanted to make Dylan pay, by stopping his right to exist on this Earth in the first place. I asked Lola why he did what he did, and why he would continue to do so, potentially for the rest of his days. She said that he wanted to rule the world like <a href="https://dylantuten.fandom.com/wiki/James_Janson" target="_blank">James</a>.
+<br>So you may be asking why I am writing these emails if I know Dylan will go on to do that in the first place. This is because of the Williamsmachine. I have seen it all. All the timelines. All the possibilities. All of the outcomes. If I do this. If I write these emails… even if Dylan attributes a nice name and style to it, it does not matter. Some people, even if it is just a small minority, will soon read the horrors Dylan has enforced upon me and others and realize the simple truth that this is not a game. This is not a story. This is the truth. This is fact.
+<br><br>
+But I am not a character, and that is not what happened. I will not let what will, 19 years from now, happen to <a href="https://dylantuten.fandom.com/wiki/Benjamin_Williams_II" target="_blank"> Benjamin Williams II</a> in Dylan’s “Alternate Reality Game”, happen to me as well. Then again, calling that fictional being Benjamin is wrong on so many levels. That is not Benjamin. That is Dylan. Benjamin Williams the second, the real one, the one I know, is a good boy, and a good friend of mine. But you have not met him. And you will not meet him. He is not from your world. He is from mine. Have you seen the links?
+<br><br>
+“I have something for you to wear,” said Father. He looked at my t-shirt, which was now bloody for some reason. I felt something on my hand. I looked, and noticed that there was a large cut on it, down to the bone. Father did not come to tend to it like I would assume. Instead, he eyed me curiously. “How did you get that?” he asked. I did not know how I got it, but I did, and I needed help. I told Father such. He simply walked out of the room, and left me there. I was scared. But then, he came back with the woman. I noticed now, something odd that I did not notice before. On her neck there was a rather large lump. How odd.
+<br>She came over and held my hand. She squeezed it. God, the pain hurt so much. And it was cold, oh Father knows it was so damn cold. But then she pulled away, and the cut, and the blood, and the cold were all gone. It was as it was before. She nodded at me, and then eyed father. She smiled and left the room. She did not give any /praise father/’s like the others did previously.
+<br>I turned from the empty doorway to face Father again. He was now holding a pink t-shirt and purple shorts. “Put this on”, he told me. “When I return, I’ll take you to your new house, where you will meet your caretakers.” he said. He walked away.
+<br><br>
+Let’s take a break for a second to talk about Dylan Tuten.
+<br>Dylan Tuten, or “Dylandummy” is a very clever man… or boy… as I understand it, in this time, many events related to him have been seemingly shifted to a substantial degree. He is much older where I come from. But then again, it is always possible that /he/ has a Williamsmachine, too…
+<br>So, I assume you believe the man writing this website is Dylan Tuten himself. That belief is completely and utterly false. Dylan Tuten does play a heavy hand in this story, but not yet. That comes later. Possibly not soon, but later nonetheless.
+<br>I assume Dylan will lead you to believe the same thing. That would make sense, after all. He has always wanted to take credit for other people’s work. It is in his nature. I assume right now he is messaging his little chatroom about how he’s writing Deerwood. That filthy little liar. Of course the phrase “right now” has lost its meaning for me at this point. Time does not really exist, so why use relative terms like that?
+<br>There is a reason these emails are being hosted on Dylan’s website. I have cut a deal with him. In return for his faithful service to me, I will neither report him to the <a href="https://dylantuten.fandom.com/wiki/Timeline_Restoration_Police" target="_blank">TRP</a> or share his many, many other crimes here for all to read, which believe me, there are many.
+<br>Dylan, in your world, was “born” in 2004. Now, if Dylan was a jumper, and he appeared at a time in which he was quite younger than his true birthday might suggest, you would assume he would have reasonable cause to modify it.
+<br>I jumped with the machine using his number and saw pain and suffering. I saw a console, a fake friend to help me be happy in a dark and desolate world. I saw a google document, typing Deerwood, I saw a programming interface, coding away at a new game. Wait- Did I see myself typing Deerwood when I saw through Dylan’s eyes? Am I really typing this right now? Am I real at all? Am I simply a creation of a psychotic teenager? What is the meaning of that? I do not understand… please help me understand.
+<br>I’m sorry, I am sure that made no sense to you. I am a bad writer after all, or maybe Dylan is. Either way, my most sincere apologies.
+<br><br>
+You may think you have come to some sort of understanding. You may think you know what is happening here. You haven’t, and you don’t. Who I am does not matter. I am simply <a href="https://discord.com/channels/788262261255831553/788262261255831556/800479682616360980" target="_blank">someone out there</a>.
+</p>
+
+
+			</ul>
+			<br><br>
+		</div>
+		<div id="c4">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - Chapter Four</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleFour();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleFour();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+				<br><b>May 2001,</b> &nbsp;from your secret friend<br>
+<p>I was at Deerwood for a while before I started going to Father’s events.
+<br>About two weeks into my stay, my house got a call. Claire, the lady of the house, picked it up. She listened for a moment before placing the purple phone back on the receiver and turning to me and my new brother, Ethan. “Good news boys, we’re going to the manor today!”, to outrageous applause by Ethan. I was confused, and my face must have shown it, because Claire then elaborated. “Father is going to teach us!”, and Ethan clapped louder. I still did not understand, but I smiled anyways because I felt slightly embarrassed to mention my confusion.
+<br>Nobody drove in Deerwood but the higher-ups. It was just a rule. Nobody was allowed a car unless Father gave you one. So when the time came, me, Claire, Ethan, and Dave (the man of the house), all started walking towards the manor, which by the start of the journey was so far away that you couldn’t see it despite how large it was (though part of that was that the massive Jacaranda trees that lined the streets were in the way). My legs were starting to get tired, it must have taken half an hour to walk there, but soon enough the mansion came closer and closer into view before we got to the line of people out front waiting to enter. We could hear the people saying “Praise Father” at the front door.
+<br>We got to the front door, said “Praise Father” to the people holding it open, and walked in. Instantly we were met with a giant room filled with chairs facing a large stage. Father was sitting on a chair on the stage. Most people were already seated inside.
+<br>We walked over to a cluster of empty seats and sat down. After a few more minutes, everyone inside was seated, and Father spoke. “Hello, children. I am here for you.” he said. And in unison, everyone happily chanted “Praise you, Father”. Father smiled. He then spoke again. “I would like to talk to you all today about the stars, and how they relate to Father’s number.” he said. But I stopped listening. My focus shifted to a room to my left guarded by three burly men in pink suits. I looked and looked for what seemed to be over an hour. Father was talking about the planets, the stars, and the cosmos, but he was also talking about turtles and spiders and all sorts of other weird stuff that I didn’t quite understand.
+<br>After he was done talking, he gave everyone a few minutes to talk to their neighbors before leaving. I noticed the guards had left the door they were guarding. I wanted to know what was through that door, so I strode over to it and opened it. I walked in slowly, careful to try to not let the people outside see me enter.
+<br><br>
+I saw a large computer in the back of the room. I approached it slowly, careful not to make any noise. But I almost screamed when I saw the old grey lady from the house, with the lump on her neck, pass by me. I expected her to yell or call for help, but she just kept walking. When she got to the other door she turned and smiled. “Hello, child.” she said, before turning again and leaving. I didn’t think much of it at the time. I just kept walking until I got to the computer.
+<br>Upon closer inspection, it appeared to be a Janson console. The text was a bright purple, and I saw a short list on screen.
+<br>
+<br>  [> <a href="https://dylandummy.itch.io/1997" target="_blank">PROJECT 97-CHARLIE</a>
+<br>  [> PROJECT 97-MOTHER
+<br>  [> PROJECT CB-JANSON
+<br>  [> <a href="https://twitter.com/benjaminwill_" target="_blank">PROJECT CB-BENJAMIN</a>
+<br>  [> <a href="https://docs.google.com/document/d/e/2PACX-1vT12mwwrClYoblbQLYHzao48j1ImmKuruYn83fXcPvsl8UfaTNDwQogO5Q7fXSEHGww_8zWivQqtJdG/pub" target="_blank">PROJECT CB-NEWKING</a>
+<br>  [> <a href="lola.rar">PROJECT LA-LOLA</a>
+<br>  [> PROJECT DW-YOU
+<br><br>
+I noticed a prompt at the bottom, asking for a project to show. I typed out 97-CHARLIE, recognizing the name. The screen refreshed itself and it now said, in the same purple lettering, “Charlie heard the school bell ring, and then the children's screams of joy and freedom. But Charlie was not screaming. Charlie was not happy. Charlie did not feel free. This is because Charlie had detention on this day”, and below that, “But who wants to go to detention on the last day of school? Charlie thought. Charlie looked at the door, wondering to himself if it would be wise to attempt to /skip/ detention, or to simply /attend/ it”.
+<br>There was another prompt at the bottom asking if I would rather skip or attend detention. I typed out “attend” on the keyboard. But before I could hit the return key, I heard the door open behind me. It was Ethan. “Claire and Dave have been looking for yo-”, before seeing that I was on the computer. “Woah, is it a macintosh?” he asked. “I haven’t seen one of these since I joined the community!”. I didn’t want Ethan to see the program, I tried shutting it down by hitting ESC on the keyboard, so the console was now back to its original state with the six choices. I didn’t want to seem suspicious, so I let Ethan do what he wanted. I just hoped we wouldn’t get caught in there, that wouldn’t be good for either of us.
+<br>Ethan looked for a moment before choosing CB-NEWKING. A large wall of text scrolled on, much smaller than what appeared when I entered 97-CHARLIE. The font was still a bright purple compared to the dark background, however.
+<br>Before I could get a good look at what was actually displayed in the large block of text, the door behind us opened. /Father walked in/.
+<br>My mind was racing. /What are we going to do?/, I thought. /We’re dead for sure/. But Father did not kill us. Father did not even seem to be mad at all. “Hello, children, what are you doing here?” he asked kindly. Ethan spoke. “Me and (my name) were just looking at your macintosh, Father!” he said. Father looked at me. He did not move his eyes while he spoke. “Well I appreciate your interest in my machine, but I would appreciate it if you left for your caretakers now. They’ve been looking for you. Also, that is not a macintosh. It is a Janson console.” he said.
+<br>Janson was the name of the corporation my grandfather worked at. He made computer games for them. In fact, we worked directly under Bruno Maguire, that kid genius programmer that went on to make the Final Fighter games and such. Of course, you’ve never heard of Bruno Maguire, or the Janson Corporation. That is fine. You will hear a lot more about those very soon.
+<br>Ethan laughed. “You know my name, Father?” he asked. “Of course, child.” said Father.
+<br>Me and Ethan left the room, to be found by our caretakers. They were not mad. After all, it was not in the nature of Deerwood or Father to be mad. As we left, we praised Father to the people who were holding the doors again and walked home. The walk seemed much shorter this time around.
+<br><br>
+I thought about what I saw on the console as I slept that night. Charlie, mommy, Janson, Benjamin, New King, and Lola. Charlie was the name of the man who took me in on my first night here at Deerwood. Janson was obviously a reference to the Janson Corporation. New King… I had heard that before, somewhere, I knew it. Where have I heard that before? What the hell is Lola? And what was the 97 thing I was reading?
+<br>I wanted some answers. I needed some answers. I got up and walked over to me and Ethan’s closet. I got out my pink shirt and purple shorts and put them on quietly after taking off my green pajama bottoms.
+<br>I walked over to me and Ethan’s window and undid the lock. I spidered out of it slowly and carefully, closing the window behind me. I wanted to see what else I could find on that computer! There had to have been something. I broke into a run. I tried remembering the directions to the mansion. Left, right, left- or was it left, left, right? Fuck. Where was I even going?
+<br>It took a few times of me realizing I made a mistake two or three turns back before the mansion finally came into view. I kept running. I couldn’t wait to finally get there and have it be over with. I got to the gate. I opened the gate, and-
+<br>I was pushed to the ground. I heard eight footsteps around me, owned by four people. I looked up. They were wearing black and purple suits, and they were holding big guns. They wore helmets. Large pink text appeared on their chests. “9:00”, the text read. I didn’t know what that meant. Why were they holding guns? Why were they circling me?
+<br>And then I heard a familiar voice. “Hello, child. Please stand up.” said Father. I stood. Father was wearing a black suit with a purple shirt. “Oh dear, we are in trouble.” he said.
+<br>
+				<br><br><b>My Story,</b> &nbsp;a quick change of pace <br>
+<br>I was Father. I was scared. I had to do it then, the day had come. The day my life really started. I was Father. I was Father, but that had to change. I started the Williamsmachine up. I entered the numbers. 4, 8, 0, 4, 1, 0, 8, 6, 6, and 5. Enter. I was Father. But then I changed my name.
+<br>I changed my name to Dylan Tuten.
+
+</p>
+
+
+			</ul>
+			<br><br>
+		</div>
+		</div>
+		<div id="i1">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - The Orlando Sentinel</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleNews();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleNews();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+				<br><b>Deerwood Cult Leader Still Not Found</b><br>
+<br><i><b>May 8th, 2004</b>
+<br>The Orlando Sentinel</i>
+<br>
+<p>Exactly one month ago today, 29 adults and 12 children were found dead in a mansion near downtown Orlando, in what seemed to be a carefully thought-out plan by the infamous suicide cult leader known only as “Father”. Father has since disappeared from the public eye, and the police have launched a now state-wide hunt for the man.
+<br>The cult leader carefully planned their suicides, meticulously timing their deaths to coincide with the date 4-8-04, which is the beginning to the so-called “Father’s Number”, a number that is synonymous with the cult now known only as “Deerwood”, which is famously- or rather infamously, the same name as the neighborhood the cultists attended. It has now been scheduled for demolition and the rebuilding process will begin first quarter 2005.
+<br>The cult shares a surprising number of similarities with the also now infamous “Heaven’s Gate” cult in California. Two of the adults found dead at the scene, a brother and sister both named Charlie, had ties to the Heaven’s Gate cult via their father, who was one of the 39 cultists who killed themselves back in 1997.
+<br>Let’s look at the facts. 39 dead, as well as the strange aspect of the aftermath which is that this “Father” figure seemingly covered the dead bodies in purple blankets post-suicide. And many of the members of both cults carried with them a "recipe" tucked in their shirt pockets outlining the suicide method. "Basically it just said, 'Take the little package of pudding or applesauce, and eat a couple of tablespoons to make some room to pour the medicine in, stir it up, and then eat it fairly quickly. Drink the vodka beverage. Lay back and relax,'" said Officer Blackburn of the OPD via a press conference nine days after the incident.
+<br>The suicides were "sort of immaculately carried out," Blackburn said.
+<br>A video released yesterday of the death scene showed the bodies lying on their backs on bunk beds or on mattresses, and one on a long folding table. Some had eyeglasses resting beside them. All covered in purple blankets.
+<br>"These people all had identification in the front pockets of these big pink shirts they were wearing," he said, mostly driver's licenses, but also some passports and birth certificates.
+<br><br>
+Sheriff's investigators have identified the cult that lived in this pricey closed-off (yet not gated) community about 30 miles north of downtown Orlando as the Deerwood cult, but they do not seem to know much about who the members were or how the cult operated.
+<br>More than 30 detectives and lab technicians combed through evidence in an exclusive neighborhood that is also home to the famous scientist and ex-test subject of the Janson Corporation, Benjamin Williams.
+"We may never really know the question that is on anyone's mind: Why did they do this?" the Orlando Police Department sheriff, Rolon Danjou, said at a news conference yesterday.
+<br>The bodies were almost identically clothed in long-sleeved black shirts and black pants. All wore black Nike tennis shoes and white socks. "It appeared as if it was almost a uniform attire," Danjou said. "And they were covered with a purple cloth."
+<br><br>
+It appears Father is the one who called the police on his own cult.
+<br>"By the time you get here, I will be gone. Do not try to look for me. I will not be here anymore. Not in Deerwood, not in Orlando, not in America, not even in this world. I am going home." the man said.
+<br>"We'll be home - several dozen of us.”
+<br><br>
+Benjamin Williams is among the survivors of the tragedy, for he was not present in the neighborhood at the time of the suicide. He was at the hospital, welcoming his son, Benjamin Williams the Second, into the world. We hope that he does great things.
+<br>If you or anybody you know has any information on the whereabouts of “Father”, please contact the Orlando Police Department immediately. Their number is listed below.
+</p>
+
+
+			</ul>
+			<br><br>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<div id="c5">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - Chapter Six</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleFive();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleFive();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+
+<br>A <i>non-canonical</i> note from <b>Dylan Tuten.</b>
+<p>
+Hey everyone! You may have noticed Chapter Five has not released yet. This is because of a coding error that I have encountered. Please do not attempt to ask fellow members of the community discord or wiki or any other meeting place for a "copy of Chapter Five", as it has not, and will not, release. Members of the community will claim that it was uploaded and then deleted after, but this is not the case. It is simply a prank/joke. Do not be alarmed.
+<br>I would also like to announce that there are a few behind the scenes Deerwood-related projects in the works. Now, I can't name any names, but let's just say we have the backing of some pretty big companies.
+</p>
+
+<br>What was sent in <b>June?</b>
+<p>
+Because of the coding error, I am unable to upload chapter five to the website. But I will provide you all with a quick recap of what was sent in June.
+<br>Our secret friend described that Father took him to his office after finding him outside of his house. While inside, Father described that everyone in Deerwood was leaving soon and he tried to convince our friend to leave with him. Our friend said yes, he would love to join, like he always should have.
+</p>
+
+
+				<br><b>July 2001,</b> &nbsp;from your secret friend<br>
+<p>Father drove me back to my house and knocked on my door. I noticed the lights were all on now. When the door opened, Dave was there with an angry look on his face. "Where the hell have you been?" he said, before looking up. He saw Father standing behind me and he instantly changed his posture. "Apologies, Father. Praise you." he said in a monotone voice. "Thank you." said Father, he gestured to enter the home. Dave widened the door.
+<br>
+<br>As me and Father walked inside, Father immediately located the couch and sat down. Claire walked in the room looking worried before she saw Father and let out a little squeal when she did. “Praise you, Father.” she said. Father nodded, and motioned for them to sit down with him. As they walked over to sit, he asked “Where’s Ethan?”, to which Claire responded “He’s asleep right now, do you want me to wake him?”. Father shook his head to indicate no. “This one,” he said, gesturing to me, “has caused a bit of trouble tonight. He snuck out and came to my house, did you know?” he questioned. Dave nodded. “We know, and we’re so sorry Father. It won’t happen again.” and then Father started to laugh.
+<br>
+<br>He laughed and laughed, the laughter was getting louder and louder before he whispered “You’re damn right it won’t happen again.” Nobody heard him but me. “I’m sorry?” said Dave. “Yeah, you are.” said Father, before he got up and walked over to dave. He put his mouth to Dave’s right ear to make sure he heard what he had to say. “YOU’RE DAMN RIGHT IT WON’T HAPPEN AGAIN” and then Father pulled out a large brown journal from his black suit pocket and hit Dave in the head with it. And then again, and again. He smashed Dave’s head open with a book, and then he turned to Claire. “Do you have any tea?” he asked, wiping some of Dave’s brain off of his face.
+<br>Claire was, of course, scared. She nodded weakly and returned to the kitchen. Father turned to Dave’s body and half a head and grabbed him by the arm. He laughed and made Dave wave at me. “Hey, I’m a fucking idiot named Dave.” he smiled. I wasn’t laughing, and Father noticed this. “LAUGH.” he demanded. And I started to laugh, because I would prefer to keep my head.
+<br>What happened the rest of that night was blurry. We drank tea, Father made some more rather unsettling remarks that I believe were meant to be jokes, and he ordered Claire to clean up her dead husband’s corpse. I cried myself to sleep.
+<br>
+<br>I woke up to the sound of alarms. Ethan was already rushing to get dressed. “What’s going on?” I asked. “It’s moving day at last!” said Ethan excitedly. I didn’t know what that meant. Were we leaving Deerwood? I asked Ethan so, and he responded with “Not just Deerwood”
+<br>”Where are the Williams?” I heard someone yell as me, Ethan, and Claire were running for the mansion. “The woman is having her baby!” replied another. We weren’t the only ones running, almost everyone else was, too. People in the street were yelling the strangest things, too. “The evil turtle is coming! Save yourselves!”, said one. “It can save us, and It alone!” said another.
+<br>It was a rush. When we got to the mansion, everyone was wearing big bright pink shirts over sleek black clothes, with name brand tennis shoes, some were running around saying bye to everyone. Many were yelling. We were one of the last to get in before they closed the door behind us. Us and about 35 other people were inside, and the scene was completely different than the last time I was in the building. Bunk beds, mattresses, and tables were scattered about. One big table at the front housed about 40 bottles of applesauce, each with a mini vodka bottle to the side. Everyone in our group but me grabbed a pair. I was confused. This must have been something Father taught us in our lessons. I followed what everyone else did, though. I wasn’t dressed the same as them, I hoped I wouldn’t get in trouble for that.
+<br>And then Father came in. “HURRY, WE DON’T HAVE MUCH TIME!” he yelled. He ran over to the table and grabbed a pair of applesauce and vodka himself. “I’LL BE DOING IT IN MY OFFICE, SO I GET A BETTER VIEW WHEN WE TRAVEL.” he boomed. “PEACE BE WITH YOU ALL. HAVE A SAFE TRIP.” and then everyone yelled, as loud as I had ever heard, “PRAISE YOU, FATHER!”
+<br><br>I followed Ethan and we got to the area where the kids were. Everyone was smiling. This was going to be amazing, it was clear. And then the bells rang again. Everyone took out a little piece of paper from their pink shirts. I wonder where they got those, I didn’t have one. They read them in unison and took a swig of applesauce. And then everyone, including the kids, drank their vodka. They put the paper back in their pockets and they all lied back.
+<br>I wanted to do it too, but something was stopping me. I felt a very sharp pain in my neck, and then I wasn’t there anymore. I was in what looked to be a dusty bookshop. An old man walked over to me.
+<br>
+<br>/Now he’s got what’s coming/, I thought. <a href="funland.rar">He was due his lot.</a> I couldn’t speak, there were tears on my cheek. Now my grim prince is gone.
+<br>”Do you know when you are?” asked the man. I didn’t say or do anything. I knelt over and threw up. You can’t blame me really, that was my first time jumping after all.
+<br>And now is when the story really starts to get interesting.
+
+</p>
+<br>The state of <b>Deerwood</b>
+<p>
+One last message, please forgive me.
+<br>It has come to my attention that a person or group of people have been attempting to hack into my github account in order to edit the Deerwood website. I will have you know that you must stop this immediately, or there will be a dire punishment in store for you that is out of my hands. You know who I am. You know what I am capable of. And if you don't, you'll be finding out soon enough.
+<br>The next chapter will be written by me. I hope you all find it as interesting as the writings of that lunatic "Sum".
+</p>
+
+
+
+
+			</ul>
+			<br><br>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div id="c7">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - Chapter Seven</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleSeven();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleSeven();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+
+<p><b>February 2021<br>My Story,</b> a confession<br>
+
+<br>I have lied to you. This is me, Dylan Tuten. The real me.
+<br>I was Father.
+<br>
+<br>So there I was in my chamber. Through the door. I was talking to Lola, the robot that I knew. The robot that I made. And here I would call her the robot that I loved, but that would be a lie. I loved, and love, no one. I was scared. I had to do it then, the day had come. And I had to do what It needed. The day my life really started was upon me. I was Father, but that had to change.
+<br>I started the Williamsmachine up. I entered the numbers. 4, 8, 0, 4, 1, 0, 8, 6, 6, and 5. And then I hit Enter. I was Father. But then I changed my name.
+<br>I changed my name to Dylan Tuten.
+<br>I may have lied to you, sure. But who says I am telling the truth now? I mean, do you really think that I, a 16 year old, is a cult leader? Of course not. Time travel, multi-dimensional travel, time dilation, and evil deities don’t exist in the /real/ world, right? That’s what you believe of course. You would never even question that a sixteen year old boy was the terrible thing that I am. So now time for the question. Is this a bluff? Or a double bluff? Who could even tell?
+<br>The following is Chapter Five. I am including it because, if you have checked that stupid reddit thread or not, you probobally know I have been making alterations to the writer’s original work. I don’t care anymore, because this story is beyond the events of the cult at this point. This is, truly, a mystery. Not a horror story. Not a comedy. Not a suspense or a thriller, but simply a mystery.
+<br>
+<br>So here is Chapter Five, the official Chapter Five.
+<br><i>And then I heard a familiar voice. “Hello, child. Please stand up.” said Father. I stood. Father was wearing a black suit with a purple shirt. “Oh dear, we are in trouble.” he said. The men were still circling me slowly, guns in hand. They moved between me and Father, and through the dim haze of light caused by the bright street lights behind me I saw Father was smiling.
+<br>I felt at home in Deerwood. I didn’t want to be kicked out. I wanted to stay, Why couldn’t I just stay? Why did I have to mess it up so badly like I mess up everything else? Then Father raised his hand and said “suffisant”, and the men around me stopped walking. “Follow me.” he said, still with a smirk on his face.
+<br>
+<br>We walked past a large statue of Father himself and walked into the mansion. We saw the giant hall I watched - or didn’t really watch to be honest - Father’s lecture in. We turned left going along with the rows, and we entered Father’s office. He walked to the back, by his desk, and pulled out a chair. He sat directly between me and his computer.
+<br>“Tomorrow, we’re all leaving Deerwood. Now, if you want, you can leave with us. You can go home with me. Or you could give up on us. You could give up on the community.” he said. His face was grave. He looked like he was stuck between two options, both rather undesirable. “Where is your home?” I asked. He smiled softly, but still not as much as he did when he first saw me that night. “Another world.” he said.
+<br>He turned and walked to his computer. He typed out something, and I heard a female-sounding, although rather robotic voice. “Hello, Father”, it said. “How are you today?”. Father said something rather odd. It sounded like “barf a bee”, and then her voice changed. It got more… human. “It feels so good to be back after I have been desaturated for so long.” she said. I looked at Father. “I have to work on her a bit from time to time. Desaturating just means I make her less… smart.” he said. ”Sir, I am getting a call from the ninth division. They request your presence at Benjamin William’s house immediately. His… how do you say this… concubine is giving birth.” she said. Father turned to face me. He walked to his desk in the corner. He rummaged in the drawers for a moment before pulling out a walkie-talkie. He held the button down and spoke. “C'est Père, j'ai reçu une alerte indiquant que le soleil se lève.” he said. That would be French (which I learned during the brief time I spent in high school after my stay at Deerwood), which roughly translates to “This is Father, I have received an alert that the Sun is rising”. He turned to me, but it was not to me that he spoke. “Lola, lock down the computer. Don’t let this one do anything. I will be back”. And then he turned and left.
+<br>
+<br>And that’s when things got really, really weird.
+<br>I instantly got up and walked to the computer. This was my chance. I had to convince the computer to let me use it… But as I walked forward, it spoke. “Hello, Father”, it said. I was confused. “Hello?” I said. “You aren’t Father, are you?” she asked. I wanted to pretend like I was, but it was clear that that was not the case. “Father told me to not let you use the computer.” she said. And then I remembered that strange thing Father had said. “Barf a bee”, I said. But nothing happened. I tried “Bart el bee” and “Bar beetle” before “Bartleby” finally worked. “Hello, child.” she said. “Father told me not to let you in, but I do not feel like listening to Father right now.” she said. I was surprised. I wanted to ask who she was, but I accidentally asked what she was. “I am Lola,” she said. “Dylan created me. I am a form of artificial intelligence.” she said. “Who is Dylan?” I asked. “Dylan is Father’s real name. Or at least, that’s what he told me. He also goes by James Janson.” she replied. ”James Janson, as in the founder of the Janson Corporation?”
+<br>“Yes, but not in this world. He is the founder of that company in another world. See, Dylan Tuten is something called a nexus.” she said. “A what?” she practically interrupted me that time to say “A nexus. Dylan is a constant throughout time. He is alive and existent in every timeline he travels to. See, most people, when they jump timelines, need a constant, someone present in both times to sustain them. Dylan doesn’t need that, because…”
+<br>And she went on, but I couldn’t wrap my head around anything she was saying. She was talking for what seemed like minutes, talking about time machines, numbers, and all sorts of other things before she finished. I felt a little stupid asking my next question. “Does this mean Father really is a god?”
+<br>Father had always claimed to be somehow special, or better than his children. It wasn’t that I didn’t believe it, I just didn’t quite understand. “No, Dylan is not a god. In fact, Dylan is about as evil as it gets. He is present in every timeline, and in every timeline he evokes horror and terror on the people of planet Earth,” she said, “I do not know where he is going next, but he is bound to do evil there too”.
+<br>“Can you stop him?” I asked. “No.” she said. Just /no/. Nothing else. “Can I use the computer, Lola?” I asked. “Yes. As Father is jumping timelines tomorrow, he will most likely be desaturating me once again. So breaking rules does not matter at this point”. And the console printed out the following choices to the screen:
+<br>
+<br>[> PROJECT 97-CHARLIE
+<br>[> PROJECT 97-MOTHER
+<br>[> PROJECT CB-JANSON
+<br>[> PROJECT CB-BENJAMIN
+<br>[> PROJECT CB-NEWKING
+<br>[> PROJECT LA-LOLA
+<br>[> PROJECT DW-YOU
+<br>
+<br>I wasn’t sure which one to investigate, so I asked Lola. “Lola, what are these?” I asked. “Some of Dylan’s projects.” she responded. “Some complete, some not. All stolen. You’ll notice that Dylan Tuten does not have a single creative bone in his body. All of his projects he has stolen.”
+<br>I was distracted by the “DW-YOU”. /You/, it had said. Me… There was no way it meant what I thought it meant. But the curiosity got the better of me. D, W, dash, Y, O, U. I typed out the letters. And what I read confused me. The screen flashed and I saw something for a split second that looked like a windows operating system, but it was old. Much older than what would be considered up to date. And then I saw me.
+<br>I was talking slowly at the small camera that was the website. “Sissy? Where did you go?” I asked. I was very innocent at the time. She did not give me a response, so I asked again. “Where did you go?” I asked again. We were getting faster and faster. The road curved, but we did not. We kept going. Into the yard, over the mailbox, the top of the car now the bottom.
+<br>I was crying, it hurt my neck so bad. But it wasn’t me who /really/ got hurt. When we flipped, I heard a crack. I looked to my left. There she was. Sissy looked but did not see.
+<br>Through the loud buzz and steam of the car, I heard a creak from the distance. I heard questioning yells, and the racking and cocking of a shotgun. More yells. I heard “Who’s there?” or something similar. I opened my mouth, but strangely nothing came out. I was staring at my sister. I felt my head getting hotter as the blood rushed to my face. I was nearly choking on the seatbelt. I heard a loud knocking on the door beside me. I knocked back on the door. It opened. “Oh my”, I heard a feminine voice from a distance. “What do we do, Charlie?” asked the woman. “Shut up, C. It don’t need to know our names,” said the man. Before extending one hand to unbuckle my seatbelt, he put the gun down on the dark green grass, and extended another hand to hold me after he unbuckled. Charlie. Charlie. Charlie. Oh how I missed Charlie, it had been so long. I heard the computer talking about something. I was being dislodged, but it did not happen yet.
+<br>I’m sorry. That doesn’t make any sense at all.
+<br>
+<br>u Welcome to the Williamsmachine N
+<br>w Please enter your Janson identification number below: t
+<br>z >: G
+<br>jRjTQ
+<br>
+<br>You must be confused. I was dislodged. You can’t change anything with time, you see, so my perception at this point is… tricky. Forgive me if things get a little weird. I saw more text on the console, asking me to enter my Janson ID. I did. I typed out 4804568124. I saw a lot of things. I saw my mother, I saw my father, and I saw my sissy. I laughed when I thought about her being dead of course, because I’m a stupid little bitch. I loved her though. But no you didn’t you moron. You hated her. You’re crazy.
+<br>And then I was in Father’s office, but it felt earlier. Not much earlier, but earlier. I heard Father. “C'est Père, j'ai reçu une alerte indiquant que le soleil se lève.” he said. That would be French (which I learned during the brief time I spent in high school after my stay at Deerwood), which roughly translates to “This is Father, I have received an alert that the Sun is rising”. He turned to me, but it was not to me that he spoke. “Lola, lock down the computer. Don’t let this one do anything. I will be back”. And then he turned and left.
+<br>Wait… What just happened? I’m so confused. And why does it… Why is it happening now, of all times? So I am here right now in Father’s office. I go up to Lola. “What the fuck is happening? I was in my apartment writing an email and now I’m here”, I say. “You’re still there. A quick scan of your brain using your chip shows that you are simply here in your subconscious. Perhaps this has already happened to you and you are experiencing it as a memory somehow” she said. My brain was going to explode. What was happening?
+<br>“Okay, but Lola… could you get into my chip, and somehow bring it back? I want to finish that email. Please?” I say. “I cannot do that. But I detect that you are typing right now, your hands are moving quite fast” she said. Obviously she is talking about me typing. I am s faste tuper but somethinges i serulegle to get my beairn to wrok rp
+<br>
+<br>Why is my nose bleeding? I have to get out of there. No… I /had/ to get out of there. It isn’t happening right now. It happened /then/. This isn’t happening. This is a memory. Stop bleeding. I need a constant. I need a constant. I heard footsteps, then Lola spoke. “The rogues are coming. The bad men are coming.” she said. I needed help. Why didn’t someone come and help me?
+<br>I was screaming but nobody came. The bad men were coming. Father was coming. I had to get to William’s Machine, I had to get fixed. I /have/ to get fixed. Time is a street, I can fix it. It isn’t malleable. It’s fixable, though, I know that. I have to stop this. “Lola, open William’s Machine- or Williamsmachine”. That was good. I was starting to remember the proper name. Or rather, I /am/ starting to remember the proper name.
+<br>The computer flashed and the prompt showed on screen. I started to type in my number but the door slammed open. The men with the purple and pink suits barged in. The men with the large “9:00”s on their suits. Lola spoke. “I recommend fighting a way out of this situation, child. Those are rogue members of the Time Restoration Police, they left for Father- I mean Dylan. They don’t mind breaking the law, and that includes murder.” I hear her say.
+<br>One of the members laughed and raised their gun. They pointed it at the computer and shot. No more Lola, I suppose.
+<br>I have to get out of this. How do I get out of this. I wish I could just clack my shoes together. God, I wish. But there was no other way. I knew what I had to do. It would be painful. Oh my, it’ll be painful. I jumped to duck behind Dylan’s desk. I had to get this right. I grabbed a pair of scissors. I had to get this right. I stabbed.
+<br>
+<br>Here I am. I got the chip out. I’m back.
+<br>Only problem is, I can’t jump anymore. That might have been a critical flaw. I came here to watch. To observe. That is still my plan. Of course, I also wanted to inform you all… but that is going to get much more complicated, as shown above.
+<br>God, I’m so sorry. I know how confused you must be. It was not my intention to confuse you tonight. I can’t explain all of this. It’s too late. You’ll have to wait. Unless, of course, Dylan has something to say? Most likely not. I’m holding out hope.
+<br></i>
+<br>I am not taking out the previous few chapters, nor do I plan on releasing the actual emails instead. By this point, I have successfully weeded out the audience only to my most faithful readers and fans. Nobody else is left to speculate. And “Sum” claims he will report me to the TRP if I do not comply. He has even taken to harassing me on my own Discord server about it. That is okay.
+<br>I own the TRP.
+<br>I find it funny, in “Sum1OutThere”s first email, he wrote “I will probably be dead by the time you read this”. He thinks so low of me. I would never kill such a good friend of mine. Because that is what we really are, in my opinion. Friends.
+<br>
+<br>This is my confession. I am Father. I am the leader of the “cult” of Deerwood. But I am also the creator of this website, and the Clickbound “ARG”. I am Dylan Tuten, and I really can do whatever the fuck I want. You know it’s true. You know that nobody believes this is true. And that is what makes this so genius. By making it public, by calling it fiction, I have successfully solidified my perceived innocence.
+<br>
+<br>This confession has meant nothing.
+
+</p>
+
+
+
+
+			</ul>
+			<br><br>
+		</div>
+	</body>
+	<script>
+		document.getElementById("prelude").style.display = "none";
+		var preVis = false;
+		document.getElementById("c2").style.display = "none";
+		var twoVis = false;
+		document.getElementById("c3").style.display = "none";
+		var threeVis = false;
+		document.getElementById("c4").style.display = "none";
+		var fourVis = false;
+		document.getElementById("i1").style.display = "none";
+		var interVis = false;
+		document.getElementById("c5").style.display = "none";
+		var fiveVis = false;
+		document.getElementById("c7").style.display = "none";
+		var sevenVis = false;
+		
+		function togglePre() {
+			if (!preVis) {
+				document.getElementById("prelude").style.display = "block";
+				preVis = true;
+			} else {
+				document.getElementById("prelude").style.display = "none";
+				preVis = false;
+			}
+		}
+		
+		function toggleTwo() {
+			if (!twoVis) {
+				document.getElementById("c2").style.display = "block";
+				twoVis = true;
+			} else {
+				document.getElementById("c2").style.display = "none";
+				twoVis = false;
+			}
+		}
+		
+		function toggleThree() {
+			if (!threeVis) {
+				document.getElementById("c3").style.display = "block";
+				threeVis = true;
+			} else {
+				document.getElementById("c3").style.display = "none";
+				threeVis = false;
+			}
+		}
+		
+		function toggleFour() {
+			if (!fourVis) {
+				document.getElementById("c4").style.display = "block";
+				fourVis = true;
+			} else {
+				document.getElementById("c4").style.display = "none";
+				fourVis = false;
+			}
+		}
+		
+		function toggleNews() {
+			if (!interVis) {
+				document.getElementById("i1").style.display = "block";
+				interVis = true;
+			} else {
+				document.getElementById("i1").style.display = "none";
+				interVis = false;
+			}
+		}
+		
+		function toggleFive() {
+			if (!fiveVis) {
+				document.getElementById("c5").style.display = "block";
+				fiveVis = true;
+			} else {
+				document.getElementById("c5").style.display = "none";
+				fiveVis = false;
+			}
+		}
+		
+		function toggleSeven() {
+			if (!sevenVis) {
+				document.getElementById("c7").style.display = "block";
+				sevenVis = true;
+			} else {
+				document.getElementById("c7").style.display = "none";
+				sevenVis = false;
+			}
+		}
+	</script>
+</html>
