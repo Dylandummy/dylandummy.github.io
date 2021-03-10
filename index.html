@@ -235,7 +235,7 @@
 					<li style="color:gray;">Chapter Five</li>
 					<li onclick="toggleFive();"><a href="#">Chapter Six</a></li>
 					<li onclick="toggleSeven();"><a href="#">Chapter Seven</a></li>
-					<li style="color:gray;">???</li>
+					<li onclick="toggleA();"><a href="#">Pillars of Armageddon</a></li>
 				  </ul>
 				</details>
 			  </li>
@@ -696,6 +696,56 @@ One last message, please forgive me.
 			</ul>
 			<br><br>
 		</div>
+		
+
+
+
+
+		<div id="i2">
+			<div class="title-bar">
+		  <div class="title-bar-text">Deerwood - The Three Pillars of Armageddon + a Meeting</div>
+		  <div class="title-bar-controls">
+			<button aria-label="Minimize" onclick="toggleA();"></button>
+			<button aria-label="Maximize"></button>
+			<button aria-label="Close" onclick="toggleA();"></button>
+		  </div>
+		</div>
+			<ul class="tree-view">
+<p><b>The Three Pillars of Armageddon</b>
+<br>From Chapter Ten: The Basics of Color Theory
+<br>
+<br>With what I have told you of what I believe to be the three main pillars of armageddon (Technology, Inherent Human Greed and Evilness, and Cosmic Forces), I will explain how those three branch off into others. Let me begin with that last one, for it is the one where most people begin to have issues with my assertion.
+<br>As I have already gone over, cosmic forces interfere with our day-to-day lives on a daily basis, regardless of if we know it or not. I have shown you this with the occurrence of the numbers seemingly everywhere power or evil, or even lies and mistrust are present. I have shown you the wave of both viruses afflicted upon us in today's modern world. But I will now touch on something that I believe deserves an entire chapter, which is color theory and how it relates to the being/force I have thus far only referred to as “It”.
+<br>There are many colors important to my theory here, but in this introduction I will only cover two. Green, the color of cunning, and purple, the color of power. It, in my opinion, is a purple being. Green, in my opinion, is more so seen in all of us. Some, however, more than others.
+<br>To put it in simple terms, the man in purple has power, and he is not afraid to excerpt it. The man in green desires power, and he is not afraid to do anything he can to gain it. Including murder and other horrific atrocoties worse than it.
+<br>I have provided many examples of this in Appendix D, but I will go on to state this:
+<br>Human beings, subconsciously or not, all wear the colors that they somewhat fit with on the wheel of my grand color theory. I have tested this, and proven it. Once again, check Appendix D in the back of this book for more.
+<br>But I will provide one major example of my “Galamorian Color Theory” in practice. Think of the Deerwood cult that shook Orlando, Florida back in the mid-2000s. The leader of this cult, Father, was synonymous with the color purple. He had his neighborhood filled with purple trees, he wore purple clothes, and he laid purple blankets over his many, many victims. Evil or not (evil), he had power, and lots of it. I have proposed in earlier chapters that power and human greed are closely linked to evilness. This, while it has not been proven by me or any other member of the scientific community, is the basis for a lot of my research here. And for the sake of this research, we must see it as fact, for the men and women discussed in this book fall under this category of relevancy (being the relation of power to evilness), and that is all that seems to matter here.
+<br>
+<br><b>The Three Pillars of Armageddon: A Review</b>
+<br>
+<br>John Galamore, if that is the author's real name, is an insane and outlandish conspiracy who wrote this book, in my opinion, solely as an exploitation piece mocking corporations the author was not talented enough to work for and with himself. Also, his frequent mentioning of the travesties that happened in Deerwood roughly fifteen years ago is, in my opinion, outlandish and inappropriate for a book that otherwise has nothing to do with the cult or any cult, for that matter. This is a book about the apocalypse, and in my opinion, the author would do good to be reminded of that fact from time to time. He frequently rambles on about minor and insignificant things.
+<br>I urge you to not buy this book. It is a waste of time and money, and I for one wish that I could get a refund not only through money, but through the hours I spent reading this drawn-on, and quite frankly boring book.
+<br>
+<br><i>Another Great Book Review from the Janson Times,
+<br>Orlando, Florida</i>
+<br>
+<br>
+<br><a href="https://www.youtube.com/watch?v=9TpYHX64WHA" target="_blank"><b>My Meeting With A Reader</b></a>
+<br>
+<br>I met with a reader of Deerwood the other day. He called himself a “proxy”. I was looking at the sign to Deerwood, like an usurped king looking at his stolen throne or a prime minister looking at a pedestal. I wanted it back. I want it back, and I will get it. I swear to It above and Bartleby below. I will get Deerwood back.
+<br>He said he needed a paper and a thing from me. I was quite confused, but then I realized he must be one of my children. See, I told my children very early on that if they saw me, they should ask for a paper. The paper would have the numbers on it, which they could repeat to summon It, or at least use It’s power temporarily. But the /thing/. What was the thing. I decided to bike off. I didn’t need to deal with someone potentially connected to the TRP, not then. I’m so close, why risk it right at the end? But then I felt my pocket. Right next to where the container that held the paper, was a small purple box containing a puzzle. I turned around. I must have subconsciously jumped and placed it there in preparation. Anyways, I handed it to him and that was it. I said what I said for Marcus and I left. The end.
+<br>
+<br>I am working on a short film set in the Deerwood universe. I hope you all find that to be something worth looking forward to.
+</p>
+
+
+			</ul>
+			<br><br>
+		</div>
+		
+		
+		
 	</body>
 	<script>
 		document.getElementById("prelude").style.display = "none";
@@ -712,6 +762,8 @@ One last message, please forgive me.
 		var fiveVis = false;
 		document.getElementById("c7").style.display = "none";
 		var sevenVis = false;
+		document.getElementById("i2").style.display = "none";
+		var aVis = false;
 		
 		function togglePre() {
 			if (!preVis) {
@@ -780,6 +832,16 @@ One last message, please forgive me.
 			} else {
 				document.getElementById("c7").style.display = "none";
 				sevenVis = false;
+			}
+		}
+		
+		function toggleA() {
+			if (!aVis) {
+				document.getElementById("i2").style.display = "block";
+				aVis = true;
+			} else {
+				document.getElementById("i2").style.display = "none";
+				aVis = false;
 			}
 		}
 	</script>
